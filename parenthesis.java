@@ -1,6 +1,6 @@
 // Class author: Munkhsoyombo Munkhbat
 // Date created: 11/07/2025
-// General description:
+// General description: The user will input different combinations of paranthesis, and the program will check if they are valid or not.
 
 public class parenthesis {
     public static boolean isValid(String bracket) {
@@ -38,6 +38,13 @@ public class parenthesis {
     }
 
     public static void main(String[] args) {
-        System.out.println(isValid(""));
+        System.out.println(isValid("(){}[]")); //true
+        System.out.println(isValid("(]")); //false
+        System.out.println(isValid("([{({})}])")); //true
+        System.out.println(isValid("(([]){})")); //true
+        System.out.println(isValid("{}[())()(]")); //false
+        System.out.println(isValid("(){}{")); //false
+        System.out.println(isValid("([)]")); //false
+        System.out.println(isValid("([{}([)])]")); //false
     }
 }
