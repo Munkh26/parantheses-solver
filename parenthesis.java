@@ -28,14 +28,9 @@ public class parenthesis {
 
             char open = bracket.charAt(idx);
             char close = bracket.charAt(idx + 1);
-            boolean match =
-                (open == '{' && close == '}') ||
-                (open == '[' && close == ']') ||
-                (open == '(' && close == ')');
-
+            boolean match = (open == '{' && close == '}') || (open == '[' && close == ']') || (open == '(' && close == ')');
             if (!match) return false;
 
-            // remove the matched pair and continue
             bracket = bracket.substring(0, idx) + bracket.substring(idx + 2);
         }
 
