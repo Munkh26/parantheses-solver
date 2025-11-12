@@ -20,10 +20,30 @@ public class parenthesis {
             if (start.contains("}") || start.contains("]") || start.contains(")")) {
                 return false;
             }
-    ///fix from here below
-            for (int i = 0; i < length; i += 2) {
+
+    ///fix from here below // need nested loop
+            for (int count = 0; count < length; count++) {
+                String find = bracket.substring(count, count + 1);
+                if (find.contains("{")) {
+                    find = "}";
+                }
+                else if (start.contains("[")) {
+                    find = "]";
+                }
+                else if (start.contains("(")) {
+                    find = ")";
+                }
                 
+                for (int i = 3; i < length; i += 3) {
+                if (find.equals(bracket.substring(i, i + 1))) {
+
+                }
+                else {
+                    return false;
+                }
             }
+            }
+            
 
     //Fix from here above
             if (ind1 > ind2 && ind1 > ind3) {
@@ -67,6 +87,6 @@ public class parenthesis {
     }
 
     public static void main(String[] args) {
-        System.out.println(isValid("({)}[]"));
+        System.out.println(isValid("({}){}[]"));
     }
 }
